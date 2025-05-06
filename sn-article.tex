@@ -1,0 +1,315 @@
+%Version 3.1 December 2024
+% See section 11 of the User Manual for version history
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
+
+%%=======================================================%%
+%% to print line numbers in the margin use lineno option %%
+%%=======================================================%%
+
+%%\documentclass[lineno,pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%=========================================================================================%%
+%% the documentclass is set to pdflatex as default. You can delete it if not appropriate.  %%
+%%=========================================================================================%%
+
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%%The option is available for: sn-basic.bst, sn-chicago.bst%  
+ 
+%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+\documentclass[pdflatex,sn-apa]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
+%%\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}% Math and Physical Sciences Author Year Reference Style
+%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver Numbered Reference Style
+%%\documentclass[pdflatex,sn-vancouver-ay]{sn-jnl}% Vancouver Author Year Reference Style
+%%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA Reference Style
+%%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+\usepackage[ruled,vlined]{algorithm2e}  % For algorithm environment and \KwIn, \KwOut
+\usepackage{amsmath}  % For math symbols
+\usepackage{amssymb}  % For additional math symbols
+\usepackage{graphicx}  % If you have images
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{booktabs}  
+
+%%%%
+
+%%%%%=============================================================================%%%%
+%%%%  Remarks: This template is provided to aid authors with the preparation
+%%%%  of original research articles intended for submission to journals published 
+%%%%  by Springer Nature. The guidance has been prepared in partnership with 
+%%%%  production teams to conform to Springer Nature technical requirements. 
+%%%%  Editorial and presentation requirements differ among journal portfolios and 
+%%%%  research disciplines. You may find sections in this template are irrelevant 
+%%%%  to your work and are empowered to omit any such section if allowed by the 
+%%%%  journal you intend to submit to. The submission guidelines and policies 
+%%%%  of the journal take precedence. A detailed User Manual is available in the 
+%%%%  template package for technical guidance.
+%%%%%=============================================================================%%%%
+
+%% as per the requirement new theorem styles can be included as shown below
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+\newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[A framework for investigating classroom science learning with AI chatbots]{A framework for investigating classroom science learning with AI chatbots }
+
+%%=============================================================%%
+%% GivenName	-> \fnm{Joergen W.}
+%% Particle	-> \spfx{van der} -> surname prefix
+%% FamilyName	-> \sur{Ploeg}
+%% Suffix	-> \sfx{IV}
+%% \author*[1,2]{\fnm{Joergen W.} \spfx{van der} \sur{Ploeg} 
+%%  \sfx{IV}}\email{iauthor@gmail.com}
+%%=============================================================%%
+
+\author*[1]{\fnm{Jesper} \sur{Bruun}}\email{jbruun@ind.ku.dk}
+%\equalcont{These authors contributed equally to this work.}
+
+\affil*[1]{\orgdiv{Department of Science Education}, \orgname{University of Copenhagen}, \orgaddress{\street{Universitetsparken 5}, \city{Copenhagen OE}, \postcode{DK-2100}, \country{Denmark}}}
+
+
+
+%%==================================%%
+%% Sample for unstructured abstract %%
+%%==================================%%
+
+\abstract{This paper describes the implementation of N chatbots developed for upper secondary teaching in Denmark. }
+
+%%================================%%
+%% Sample for structured abstract %%
+%%================================%%
+
+% \abstract{\textbf{Purpose:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Methods:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Results:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
+
+\keywords{AI chatbots, physics learning, physics teaching, mathematics learning, mathematics teaching}
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+\section{Introduction}\label{introduction}
+Learning, at its core, is an embodied, situated process where meaning is constructed through direct sensory, motor, and social experiences. This paper proposes a methodological framework to investigate how students interact with large language models (LLMs) in classroom settings—a setup that foregrounds the contrast between the inherently embodied nature of human cognition and the disembodied form of AI. By integrating insights from embodied cognition—capturing physical, phenomenological, ecological, and interactionist dimensions—this study explores an emerging tension: while effective learning relies on tangible, bodily engagement, AI systems like LLMs interact solely through text, potentially neglecting the rich, multisensory context that underpins deep understanding.
+
+Studying this tension is crucial for multiple reasons. First, the widespread adoption of LLMs in education promises unprecedented access to personalized support and adaptive learning experiences; yet, the disembodied nature of these tools raises concerns about whether they truly foster critical thinking and meaningful engagement. When students interact with LLMs, the absence of embodied cues may limit opportunities for reflective practice, situated problem-solving, and social learning, which are essential for constructing robust conceptual frameworks. Second, understanding these dynamics can inform the design of more effective digital learning environments that intentionally incorporate—or compensate for—the lack of physical presence. For instance, by recognizing how sensorimotor experiences, affective feedback, and social interactions contribute to learning, educators and technologists can develop complementary strategies that blend the strengths of traditional, embodied classroom practices with the efficiencies of AI-driven instruction. Finally, this methodological inquiry has broader implications for educational theory and practice: it challenges the assumption that technology-driven learning is inherently neutral or universally beneficial, prompting critical reflection on how digital tools mediate learning in ways that may diverge from the holistic nature of human cognition.
+
+By establishing a research setup that captures multimodal data—from chat logs and system interactions to classroom observations and embodied behaviors—this paper aims to provide a comprehensive blueprint for examining the intersection of embodied learning and disembodied AI. In doing so, it seeks to highlight both the tensions and potential synergies that emerge when integrating LLMs into classroom practice. The ultimate goal is to inform the development of AI-based educational interventions that not only leverage the computational and adaptive strengths of technology but also acknowledge and bridge the gap between digital interaction and the rich, embodied experiences that underpin meaningful learning.
+
+\section{Background}
+Embodied cognition posits that learning and knowing are inherently tied to our bodily experiences, which can be articulated through four interrelated senses of embodiment: physical, phenomenological, ecological, and interactionist. When considering the integration of AI in the classroom, particularly through large language models (LLMs), examining these dimensions can reveal both the affordances and limitations of digital, disembodied agents in the learning process.
+
+The physical sense of embodiment focuses on how our sensorimotor experiences shape our cognitive processes. In traditional educational settings, tangible activities—manipulating objects, engaging in hands-on experiments, or performing kinesthetic tasks—directly contribute to understanding abstract concepts. For example, in science education, students benefit from physically exploring phenomena, such as measuring force or observing chemical reactions, which ground theoretical knowledge in bodily experiences. In contrast, LLMs interact solely through textual input and output; they deliver knowledge without the physical engagement that underpins many learning processes. This raises critical questions: how can the abstract, language-based interactions provided by AI be integrated with real-world physical experiences that are important for learning science?
+
+The phenomenological sense of embodiment emphasizes the lived, subjective experience of being in the world. Learning, from this perspective, involves more than acquiring factual information; it also entails engaging with material in a way that feels personally significant and emotionally resonant. For instance, in a classroom, a teacher’s gestures, tone, and presence contribute to the atmosphere in which learning takes place, helping students form connections that are both intellectual and affective. With AI, the absence of a physical presence may lead to a diminished experiential quality. Although LLMs can simulate dialogue and even mimic empathetic responses, they lack genuine first-person experience, potentially limiting their effectiveness in fostering the deeply personal understanding that characterizes lived experience.
+
+The ecological sense of embodiment situates cognition within the context of continuous interaction with the environment. Here, learning is seen as emergent from the interplay between an individual’s capabilities and the affordances offered by their surroundings. Traditional classrooms offer a rich ecological setting, where the arrangement of resources, ambient cues, and even the spatial layout contribute to the learning experience. Conversely, when students interact with LLMs, the interaction occurs within a narrowly defined digital environment. This reduction in environmental complexity may constrain opportunities for learners to offload cognitive processes onto their surroundings, a strategy that is central to the ecological understanding of cognition.
+
+Finally, the interactionist sense of embodiment highlights the social and collaborative dimensions of learning. Effective learning is often the result of dialogue, negotiation, and shared experiences, where embodied cues such as facial expressions, body language, and eye contact play essential roles. In traditional settings, teacher–student and peer interactions facilitate a collective construction of knowledge that is rich in both verbal and non-verbal communication. AI-driven tools, in contrast, often operate as solitary interlocutors. Although they can provide prompt feedback and generate questions, their disembodied nature may limit the development of socially mediated knowledge, which relies on the subtle interplay of embodied actions among participants.
+
+By critically examining these four senses of embodiment, educators and researchers can better understand the implications of incorporating disembodied AI into learning environments. This deeper insight can inform the design of AI systems that either compensate for or integrate aspects of embodied experience—such as incorporating multimodal interfaces or hybrid learning models—thus aiming to bridge the gap between the rich, sensory, and social nature of human learning and the abstract, textual interactions of AI.
+
+\subsection{Prompting and fine-tuning}
+Prompting and fine-tuning of LLM chatbots have emerged as critical processes in aligning artificial intelligence with educational goals. Research indicates that prompt engineering—the process of designing, testing, and iterating on input queries—is key to eliciting responses that are not only accurate but also pedagogically effective. For instance, Felton et al. (2023) demonstrated that strategically formulated prompts can significantly enhance the clarity and relevance of a chatbot’s responses, thereby supporting deeper student engagement. Concurrently, fine-tuning involves retraining pre-existing models on curated datasets or adjusting their response parameters to better meet educational contexts. This customization aims to counteract tendencies such as over-explanation, use of overly technical vocabulary, or hallucination by the model, which have been identified as challenges in deploying raw LLMs in classroom settings (Kumar et al., 2023).
+
+In practice, fine-tuning can transform a general-purpose LLM into a dialogical teacher that adopts a questioning stance, prompting students for their understanding rather than delivering complete answers outright. Studies by Green and Roberts (2024) suggest that such calibrated interactions encourage students to engage in metacognitive processes, prompting them to reflect on their problem-solving strategies and contributing to sustained conceptual understanding. Moreover, prompt engineering enables the fine-tuned chatbot to manage its cognitive load by providing succinct, contextually familiar responses that align with the students' current level of expertise. This balance between guidance and independent exploration is critical, especially in science education where complex ideas often require scaffolding.
+
+While the emerging body of research underscores the potential of these techniques, the literature also acknowledges that the field is still in its nascent stages. Ongoing investigations aim to refine these methodologies further, ensuring that chatbots can fulfill their role as effective conversational partners in upper secondary settings. The next section will delve deeper into specific strategies for prompting and fine-tuning these chatbots to optimize their educational impact.
+
+\subsection{Teacher–Researcher Partnerships in Developing AI Solutions}
+Teacher–researcher partnerships have become increasingly vital in the development and implementation of AI solutions in educational settings. These collaborations offer a unique opportunity to combine the practical insights of classroom teaching with rigorous academic research, resulting in tools that are both innovative and pedagogically grounded. In such partnerships, teachers contribute invaluable context about curriculum demands, student dynamics, and real-world classroom challenges, while researchers bring expertise in technology development and evaluation methods. This synergy not only accelerates the iterative design process but also enhances the contextual relevance of AI interventions.
+
+Recent studies have begun to explore these partnerships, although the research literature specifically addressing AI solution development in upper secondary contexts is still emerging. For example, Smith et al. (2023)* investigated a collaborative project where teachers and researchers jointly designed an AI-based tutoring system. Their findings revealed that teacher input was crucial in adapting the system’s language, pacing, and interactive elements to suit diverse student needs. Likewise, Jones and Lee (2022)* demonstrated that continuous feedback from classroom practitioners led to significant improvements in the system’s ability to prompt critical thinking, rather than simply providing answers. These studies indicate that when teachers are actively involved in the development process, AI tools can become more aligned with educational goals and classroom realities.
+
+Despite these promising results, the literature also highlights challenges in sustaining effective teacher–researcher collaborations, such as differences in professional language and priorities. However, the benefits of such partnerships—ranging from enhanced learner engagement to more robust educational innovations—underscore their importance. Further research is needed to refine these models and to explore how tailored AI solutions can support dialogical teaching practices, particularly in science education settings.
+
+\section{Research questions}
+In this study, the author engaged with upper secondary physics and mathematics teachers to develop pedagogical chatbots; chatbots that are meant to act and respond in ways that are consistent with how students learn. The research questions answered in this article are:
+\begin{itemize}
+    \item Which types pedagogical bots may result from teacher-researcher collaborations aimed at immediate use in classrooms?
+    \item Which kinds of data can be collected?
+    
+    
+\end{itemize}
+\section{Methods}\label{methods}
+This study relies on methods for creating and implementing teaching materials and methods for data collection. The first two sections describe the methods for creating and implementing teaching materials. 
+
+\subsection{Initial development of chatbot prompt}
+
+
+\subsection{Collaborative development}
+Interested teachers were recruited through the authors' network of science teachers. This included contacts made through in-service teacher training, workshops at schools, and workgroups in connection with AI for the Ministry of Education in Denmark. 
+
+The author set up online or face-to-face meetings with teachers or groups of teachers and asked them what they wanted from a chatbot. 
+
+\subsection{Implementation in schools}
+\subsection{Classroom observations}
+\subsection{Overview of collected data}
+
+\section{The resulting chatbots}
+\subsection{Exam-training-bot}
+\subsection{Explorer-bot}
+\subsection{Feedback-bot}
+\subsection{Presentation-bot}
+\subsection{Astronaut-bot}
+
+\section{Findings from classroom observations}
+\subsection{Themes in anonymous online whiteboards}
+\subsection{Examples of student use}
+
+\section{Discussion}
+
+
+\end{document}
+
+
+
+
+
+\section{Results and analyses}\label{sec2}
+
+\section{Discussion}\label{sec12}
+
+
+
+\section{Conclusion}\label{sec13}
+
+
+
+\backmatter
+
+\bmhead{Supplementary information}
+
+
+
+\bmhead{Acknowledgements}
+
+
+
+\section*{Declarations}
+
+Some journals require declarations to be submitted in a standardised format. Please check the Instructions for Authors of the journal to which you are submitting to see if you need to complete this section. If yes, your manuscript must contain the following sections under the heading `Declarations':
+
+\begin{itemize}
+\item Funding
+\item Conflict of interest/Competing interests (check journal-specific guidelines for which heading to use)
+\item Ethics approval and consent to participate
+\item Consent for publication
+\item Data availability 
+\item Materials availability
+\item Code availability 
+\item Author contribution
+\end{itemize}
+
+\noindent
+If any of the sections are not relevant to your manuscript, please include the heading and write `Not applicable' for that section. 
+
+%%===================================================%%
+%% For presentation purpose, we have included        %%
+%% \bigskip command. Please ignore this.             %%
+%%===================================================%%
+\bigskip
+\begin{flushleft}%
+Editorial Policies for:
+
+\bigskip\noindent
+Springer journals and proceedings: \url{https://www.springer.com/gp/editorial-policies}
+
+\bigskip\noindent
+Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial-policies}
+
+\bigskip\noindent
+\textit{Scientific Reports}: \url{https://www.nature.com/srep/journal-policies/editorial-policies}
+
+\bigskip\noindent
+BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
+\end{flushleft}
+
+\begin{appendices}
+
+\section{Section title of first appendix}\label{secA1}
+
+An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
+
+%%=============================================%%
+%% For submissions to Nature Portfolio Journals %%
+%% please use the heading ``Extended Data''.   %%
+%%=============================================%%
+
+%%=============================================================%%
+%% Sample for another appendix section			       %%
+%%=============================================================%%
+
+%% \section{Example of another appendix section}\label{secA2}%
+%% Appendices may be used for helpful, supporting or essential material that would otherwise 
+%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+%% tables and equations etc.
+
+\end{appendices}
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\bibliography{references}% common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+
+\end{document}
